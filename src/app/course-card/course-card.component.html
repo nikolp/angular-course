@@ -1,0 +1,13 @@
+<div class="course-card" [ngClass]="getCssClasses()">
+
+    <div class="course-title">
+        {{cardIndex}}. {{inpCourse.description}}
+    </div>
+    <img [src]='inpCourse.iconUrl ? inpCourse.iconUrl : "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"' width="300" alt="Angular Logo">
+    <div class="course-description">
+        {{inpCourse.longDescription}}
+    </div>
+    <ng-content select=".courses.bar">
+    </ng-content>
+    <button (click)="myOnClick()">View Course</button>
+</div>
