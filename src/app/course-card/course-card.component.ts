@@ -13,11 +13,12 @@ import {
 } from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
+import { CourseService } from '../service/course.service';
 
 @Component({
     selector: 'course-card',
     templateUrl: './course-card.component.html',
-    styleUrls: ['./course-card.component.css']
+    styleUrls: ['./course-card.component.css'],
 })
 export class CourseCardComponent implements OnInit {
 
@@ -31,7 +32,7 @@ export class CourseCardComponent implements OnInit {
     courseEmitter = new EventEmitter<Course>();
 
 
-    constructor() {
+    constructor(private svc: CourseService) {
 
     }
 
@@ -40,10 +41,10 @@ export class CourseCardComponent implements OnInit {
     }
 
 
-    onSaveClicked(description:string) {
-
-        this.courseEmitter.emit({...this.course, description});
-
+    onSaveClicked(newDescription:string) {
+        let description = newDescription;
+        let updatedCourse = {...this.course, description};
+        this.courseEmitter.emit(updatedCourse);
     }
 
 

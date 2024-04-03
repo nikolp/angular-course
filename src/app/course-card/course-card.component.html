@@ -9,7 +9,7 @@
 
   <div class="course-description">
 
-    Edit Title: <input #courseTitle [value]="course.description">
+    Edit Title: <input #courseTitleInput [value]="course.description">
 
   </div>
 
@@ -23,7 +23,7 @@
 
   </div>
 
-  <button (click)="onSaveClicked(courseTitle.value)">Save Course</button>
+  <button (click)="onSaveClicked(courseTitleInput.value)">Save Course</button>
 
 </div>
 

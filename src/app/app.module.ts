@@ -8,6 +8,7 @@ import { CourseImageComponent } from './course-image/course-image.component';
 import { HighlightedDirective } from './directives/highlighted.directive';
 import { NgxUnlessDirective } from './directives/ngx-unless.directive';
 import {HttpClientModule} from '@angular/common/http';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
     CourseCardComponent,
     CourseImageComponent,
     HighlightedDirective,
-    NgxUnlessDirective
+    NgxUnlessDirective,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
